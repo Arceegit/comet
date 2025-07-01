@@ -106,11 +106,6 @@ function createHandler(client) {
         const commandName = context.commandName || command.command || (isComponent ? context.customId : 'unknown');
         const rtconfig = client.config.getRtconfig();
 
-        if (rtconfig.botSettings?.commandLogging) {
-            const logMessage = `"${commandName}" executed by ${user.tag} (${user.id}) in ${context.guild ? context.guild.name : 'DMs'}`;
-            client.logs.command(logMessage);
-        }
-
         const applicableChecks = ["maintenance", "guildOnly", "developer", "devGuild", "permissions", "cooldown", "blacklist"];
         for (const checkName of applicableChecks) {
             const result = validationChecks[checkName](context, command);
@@ -128,6 +123,11 @@ function createHandler(client) {
                 }
                 return;
             }
+        }
+
+        if (rtconfig.botSettings?.commandLogging && (context.isCommand?.() || isComponent)) {
+            const logMessage = `"${commandName}" executed by ${user.tag} (${user.id}) in ${context.guild ? context.guild.name : 'DMs'}`;
+            client.logs.command(logMessage);
         }
 
         try {
@@ -199,7 +199,9 @@ function createHandler(client) {
         const command = client.prefixCommands.get(commandName);
 
         if (command) {
-            client.logs.prefix(`Processing prefix command "${commandName}" from ${message.author.tag}`);
+            if (rtconfig.botSettings?.commandLogging) {
+                client.logs.prefix(`Processing prefix command "${commandName}" from ${message.author.tag}`);
+            }
             await validateAndExecute(message, command, args);
         }
     }
