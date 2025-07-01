@@ -1,0 +1,14 @@
+{
+  "name": "comet-js",
+  "version": "1.0.0",
+  "description": "A Discord bot base.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.15.3",
+    "fs-extra": "^11.2.0",
+    "archiver": "^7.0.1"
+  }
+}

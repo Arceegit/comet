@@ -1,0 +1,28 @@
+{
+  "token": "",
+  "prefix": "!",
+  "ownerIDs": [
+    "your id"
+  ],
+  "devIDs": [],
+  "aliases": {
+    "@embeds": "cometUtils/Embeds/Embeds.js",
+    "@utils": "utils",
+    "@cUtils": "cometUtils",
+    "@commands": "commands",
+    "@events": "events",
+    "@prefix": "prefix",
+    "@configManager": "cometUtils/Core/ConfigManager.js",
+    "@logger": "cometUtils/Logging/Logger.js"
+  },
+  "readme": {
+    "title": {
+      "es": "Acerca de los Aliases",
+      "en": "About Aliases"
+    },
+    "description": {
+      "es": "Los aliases son rutas predefinidas en Comet para que la función `connect` interactúe con tu proyecto de manera más sencilla. Puedes ver su funcionamiento en el comando `ping`.",
+      "en": "Aliases are predefined paths in Comet for the `connect` function to interact with your project more easily. You can see how they work in the `ping` command."
+    }
+  }
+}

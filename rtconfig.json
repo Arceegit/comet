@@ -1,0 +1,55 @@
+{
+  "botSettings": {
+    "maintenanceMode": false,
+    "commandLogging": true
+  },
+  "botInfo": {
+    "devBy": "Developed by Logical Impulse (arcee)",
+    "statusRotator": {
+      "enabled": true,
+      "intervalSeconds": 30
+    },
+    "statuses": [
+      {
+        "type": "WATCHING",
+        "text": "Comet Base B1"
+      },
+      {
+        "type": "CUSTOM",
+        "text": "Powered by Comet Base B1."
+      }
+    ]
+  },
+  "comet": {
+    "reloader": {
+      "enabled": true
+    },
+    "crashes": {
+      "saveLogs": true,
+      "maxRetries": 5,
+      "retryDelaySeconds": 10
+    },
+    "backup": {
+      "enabled": true,
+      "backupOnStartup": false,
+      "intervalHours": 24,
+      "deleteOldBackups": {
+        "enabled": true,
+        "maxAgeHours": 72
+      },
+      "filesToBackup": [
+        "config.json",
+        "rtconfig.json",
+        "package.json",
+        "pnpm-lock.yaml",
+        "commands",
+        "events",
+        "prefix",
+        "cometUtils",
+        "utils"
+      ]
+    }
+  },
+  "blacklistedUsers": [],
+  "blacklistedGuilds": []
+}
