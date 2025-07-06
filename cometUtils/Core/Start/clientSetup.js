@@ -60,11 +60,11 @@ module.exports = async (ConfigManager) => {
         ],
         partials: [Partials.Channel, Partials.Message, Partials.User, Partials.GuildMember],
         sweepers: {
-            messages: { interval: 3600, lifetime: 1800 }, // Remove messages older than 30 minutes every hour
-            users: { interval: 3600, filter: () => user => user.bot && user.id !== client.user.id }, // Remove cached bots every hour, except self
-            guildMembers: { interval: 3600, filter: () => member => member.user.bot }, // Remove cached bot members every hour
-            channels: { interval: 3600, lifetime: 3600 }, // Remove channels older than 1 hour every hour
-            threads: { interval: 3600, lifetime: 3600 }, // Remove threads older than 1 hour every hour
+            messages: { interval: 3600, lifetime: 1800 },
+            users: { interval: 3600, filter: () => user => user.bot && user.id !== client.user.id },
+            guildMembers: { interval: 3600, filter: () => member => member.user.bot },
+            channels: { interval: 3600, lifetime: 3600 },
+            threads: { interval: 3600, lifetime: 3600 },
         },
         failIfNotExists: false,
         allowedMentions: { parse: ["users", "roles"], repliedUser: true },
